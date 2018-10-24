@@ -21,5 +21,20 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <dependency>
+	    <groupId>com.github.N-cunningham</groupId>
+	    <artifactId>CT417_Assignment_1</artifactId>
+	    <version>9b4acc6</version>
+	</dependency>
+    
   </dependencies>
+  
+  <repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+  
 </project>
