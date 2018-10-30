@@ -8,6 +8,8 @@ public class Driver {
 	
 	public static void main(String[] args) {
 	
+		
+		//Student data
 		DateTime dob0 = new DateTime(1992, 10, 2, 0, 0);
 		DateTime dob1 = new DateTime(1998, 9, 5, 0, 0);
 		DateTime dob2 = new DateTime(1985, 5, 25, 0, 0);
@@ -24,19 +26,22 @@ public class Driver {
 		Student s2 = new Student("Peire Trueau", 58, dob1, 1, "BCT", null);
 		studentList.add(s2);
 		studentList2.add(s1);
-		Student s3 = new Student("Adlai Stevenson", 24, dob2, 2, "BCT", null);
+		Student s3 = new Student("Adlai Stevenson", 24, dob2, 2, "ART", null);
 		studentList.add(s3);
 		studentList2.add(s1);
 		Student s4 = new Student("Charles De Gaul", 25, dob3, 3, "BCT", null);
 		studentList.add(s4);
 		studentList1.add(s1);
-		Student s5 = new Student("Boris Yelsin", 58, dob4, 4, "BCT", null);
+		Student s5 = new Student("Boris Yelsin", 58, dob4, 4, "ART", null);
 		studentList.add(s5);
 		studentList1.add(s1);
 		
+		
+		//Module data
 		ArrayList<Module> moduleList = new ArrayList<Module>();
 		ArrayList<Module> moduleList1 = new ArrayList<Module>();
 		
+			
 		Module m1 = new Module("Soft Eng. iii", 0, studentList, null);
 		moduleList.add(m1);
 		Module m2 = new Module("History of Political Thought", 0, studentList1, null);
@@ -44,6 +49,13 @@ public class Driver {
 		Module m3 = new Module("European Union Politics", 0, studentList2, null);
 		moduleList1.add(m3);
 		
+		s1.setModules(moduleList);
+		s2.setModules(moduleList);
+		s4.setModules(moduleList);
+		s3.setModules(moduleList1);
+		s5.setModules(moduleList1);
+		
+		//Course data
 		DateTime startDate = new DateTime(2018, 9, 1, 0, 0);
 		DateTime endDate = new DateTime(2019, 5, 30, 0, 0);
 			
@@ -56,21 +68,50 @@ public class Driver {
 		
 		
 		printCourseDetails(courses);
+		printStudentDetails(studentList);
 	
 	}
 	
-	// print out a list of all the courses, their respective modules,
+	// print out a list of all the courses, their respective modules
 	public static void printCourseDetails(ArrayList<CourseProgramme> courses) {
 		
 		
 		for(int i = 0; i < courses.size(); i++) {
 		 
-			System.out.println(courses.get(i).getCourseName());
-			System.out.println(courses.get(i).getModules());
-		
+			System.out.println("Course: " + courses.get(i).getCourseName());
+			
+			for(int j = 0; j < courses.get(i).getModules().size();j++) {
+			
+				System.out.println("module " + (j+1) + ": " + courses.get(i).getModules().get(j).getName());
+			
+			}
+			System.out.println("\n");
+				
 		}
 		 
 		 
+	}
+	
+	//print all students, their usernames, assigned modules and the course(s) they are registered for
+	
+	public static void printStudentDetails(ArrayList<Student> studentList) {
+		
+		System.out.println("Students \n------------------------------------------------------------");
+		
+		for(int i = 0; i < studentList.size(); i++) {
+		
+			System.out.println("Name:		" + studentList.get(i).getName() + "\nUsername:	" + studentList.get(i).getUsername() + "\nCource:		" + studentList.get(i).getCourses());
+			
+			for(int j = 0; j < studentList.get(i).getModules().size() ;j++) {
+				
+				System.out.println("module " + (j+1) + ":	" + studentList.get(i).getModules().get(j).getName());
+				
+			}
+			
+			System.out.println("\n");
+			
+		}
+		
 	}
 	
 
