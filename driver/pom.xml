@@ -25,7 +25,7 @@
     <dependency>
 	    <groupId>com.github.N-cunningham</groupId>
 	    <artifactId>CT417_Assignment_1</artifactId>
-	    <version>9b4acc6</version>
+	    <version>7629c92</version>
 	</dependency>
     
   </dependencies>
